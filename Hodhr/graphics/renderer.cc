@@ -33,8 +33,13 @@ namespace hodhr {
       SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
       SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
       
+      SDL_GL_SetAttribute( SDL_GL_CONTEXT_MAJOR_VERSION, 3 );
+      SDL_GL_SetAttribute( SDL_GL_CONTEXT_MINOR_VERSION, 2 );
+      
       SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK,
                           SDL_GL_CONTEXT_PROFILE_CORE);
+      
+      SDL_GL_SetSwapInterval(1);
       
       window_.Init();
       
@@ -43,9 +48,16 @@ namespace hodhr {
       if (result != GLEW_OK) {
         std::cerr << "Problem initializing GLEW" << std::endl;
         exit(1);
+      } else {
+        int value = 0;
+        SDL_GL_GetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, &value);
+        std::cout << "Major version " << value << std::endl;
+        
+        SDL_GL_GetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, &value);
+        std::cout << "Minor version " << value << std::endl;
       }
       
-      glClearColor(0.0f, 0.1f, 0.5f, 0.0f);
+      glClearColor(1.0f, 0.0f, 0.0f, 0.0f);
       
       // initialize the shaders
       physical_shader = Shader::BuildShader("shaders/physical.vert.glsl", "shaders/physical.frag.glsl");

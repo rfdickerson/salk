@@ -14,6 +14,7 @@
 #include <glm/gtx/transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+#define GLM_FORCE_RADIANS
 
 namespace hodhr {
   namespace graphics {
@@ -23,8 +24,11 @@ namespace hodhr {
     near_(0.1f),
     far_(100.0f),
     direction_(glm::vec3(0, 0, 1)),
+    up_(glm::vec3(0, 1, 0)),
     field_of_view_(90.0f),
-    aspect_ratio_(1.0)
+    aspect_ratio_(1.0),
+    horizontal_angle_(0.0),
+    vertical_angle_(0.0)
     {
       
     }
@@ -41,6 +45,9 @@ namespace hodhr {
                                             near_,
                                             far_
                                             );
+      
+      Update(0);
+      
     }
     
     void CameraComponent::Update(float dt) {
@@ -70,7 +77,7 @@ namespace hodhr {
     }
     
     glm::mat4 CameraComponent::ModelViewMatrix() const {
-      return view_matrix_ * projection_matrix_;
+      return projection_matrix_ * view_matrix_;
     }
     
   }

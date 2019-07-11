@@ -16,6 +16,7 @@
 #include "glm/glm.hpp"
 
 #include "component.hpp"
+#include "event.hpp"
 
 namespace hodhr {
 namespace core {

@@ -21,6 +21,8 @@
 		E3AA187B229ADD720058C6F6 /* shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E3AA1879229ADD720058C6F6 /* shader.cpp */; };
 		E3AA187D229C25210058C6F6 /* shaders in CopyFiles */ = {isa = PBXBuildFile; fileRef = E3AA187C229B158D0058C6F6 /* shaders */; };
 		E3AA1880229C29250058C6F6 /* camera_component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E3AA187E229C29250058C6F6 /* camera_component.cpp */; };
+		E3AA188322A41F990058C6F6 /* event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E3AA188122A41F990058C6F6 /* event.cpp */; };
+		E3AA188622A420220058C6F6 /* mouse_event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E3AA188422A420220058C6F6 /* mouse_event.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -61,6 +63,10 @@
 		E3AA187C229B158D0058C6F6 /* shaders */ = {isa = PBXFileReference; lastKnownFileType = folder; name = shaders; path = resources/shaders; sourceTree = "<group>"; };
 		E3AA187E229C29250058C6F6 /* camera_component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = camera_component.cpp; sourceTree = "<group>"; };
 		E3AA187F229C29250058C6F6 /* camera_component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = camera_component.hpp; sourceTree = "<group>"; };
+		E3AA188122A41F990058C6F6 /* event.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = event.cpp; sourceTree = "<group>"; };
+		E3AA188222A41F990058C6F6 /* event.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = event.hpp; sourceTree = "<group>"; };
+		E3AA188422A420220058C6F6 /* mouse_event.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mouse_event.cpp; sourceTree = "<group>"; };
+		E3AA188522A420220058C6F6 /* mouse_event.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = mouse_event.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +124,10 @@
 				E3AA1871229841480058C6F6 /* component.hpp */,
 				E3AA18762298C08A0058C6F6 /* scene.cpp */,
 				E3AA18772298C08A0058C6F6 /* scene.hpp */,
+				E3AA188122A41F990058C6F6 /* event.cpp */,
+				E3AA188222A41F990058C6F6 /* event.hpp */,
+				E3AA188422A420220058C6F6 /* mouse_event.cpp */,
+				E3AA188522A420220058C6F6 /* mouse_event.hpp */,
 			);
 			path = core;
 			sourceTree = "<group>";
@@ -208,8 +218,10 @@
 				E3AA18782298C08A0058C6F6 /* scene.cpp in Sources */,
 				E3AA185522942C280058C6F6 /* main.cpp in Sources */,
 				E3AA18752298BF530058C6F6 /* geometry_component.cpp in Sources */,
+				E3AA188322A41F990058C6F6 /* event.cpp in Sources */,
 				E3AA187B229ADD720058C6F6 /* shader.cpp in Sources */,
 				E3AA1880229C29250058C6F6 /* camera_component.cpp in Sources */,
+				E3AA188622A420220058C6F6 /* mouse_event.cpp in Sources */,
 				E3AA186A22957BDA0058C6F6 /* engine.cc in Sources */,
 				E3AA186F229840DE0058C6F6 /* actor.cpp in Sources */,
 				E3AA18672295754D0058C6F6 /* renderer.cc in Sources */,
