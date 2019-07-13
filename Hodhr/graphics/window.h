@@ -1,16 +1,5 @@
-//
-//  window.hpp
-//  Hodhr
-//
-//  Created by Robert F. Dickerson on 5/21/19.
-//  Copyright © 2019 Robert F. Dickerson. All rights reserved.
-//
-
-#ifndef window_hpp
-#define window_hpp
-
-#include <stdio.h>
-#include <string>
+#ifndef HODHR_GRAPHICS_WINDOW_H_
+#define HODHR_GRAPHICS_WINDOW_H_
 
 #include <SDL2/SDL.h>
 
@@ -39,4 +28,4 @@ class Window {
 }
 }
 
-#endif /* window_hpp */
+#endif // HODHR_GRAPHICS_WINDOW_H_

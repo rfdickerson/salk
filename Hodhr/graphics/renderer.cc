@@ -49,7 +49,7 @@ namespace hodhr {
       glClearColor(0.0f, 0.5f, 1.0f, 0.0f);
       
       // initialize the shaders
-      physical_shader = Shader::BuildShader("shaders/physical.vert.glsl", "shaders/physical.frag.glsl");
+      physical_shader = Shader::BuildShader("resources/shaders/physical.vert.glsl", "resources/shaders/physical.frag.glsl");
       
     }
     
