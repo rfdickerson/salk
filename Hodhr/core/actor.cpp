@@ -39,6 +39,10 @@ void Actor::Update(float dt) {
     return position_;
   }
   
+  void Actor::SetPosition(glm::vec3 position) {
+    position_ = position;
+  }
+  
   std::vector<Component*> Actor::Components() const {
     return components_;
   }

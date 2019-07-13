@@ -30,17 +30,6 @@ namespace hodhr {
       
       glewExperimental = GL_TRUE;
       
-      SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
-      SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
-      
-      SDL_GL_SetAttribute( SDL_GL_CONTEXT_MAJOR_VERSION, 3 );
-      SDL_GL_SetAttribute( SDL_GL_CONTEXT_MINOR_VERSION, 2 );
-      
-      SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK,
-                          SDL_GL_CONTEXT_PROFILE_CORE);
-      
-      SDL_GL_SetSwapInterval(1);
-      
       window_.Init();
       
       GLenum result = glewInit();
@@ -57,7 +46,7 @@ namespace hodhr {
         std::cout << "Minor version " << value << std::endl;
       }
       
-      glClearColor(1.0f, 0.0f, 0.0f, 0.0f);
+      glClearColor(0.0f, 0.5f, 1.0f, 0.0f);
       
       // initialize the shaders
       physical_shader = Shader::BuildShader("shaders/physical.vert.glsl", "shaders/physical.frag.glsl");
@@ -68,14 +57,7 @@ namespace hodhr {
       
       glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
       
-      // set the physical shader
-      physical_shader->Use();
       
-      GLuint mvp_location = physical_shader->UniformLocation("MVPMatrix");
-      
-      auto mvp_matrix = scene.GetCamera()->ModelViewMatrix();
-      
-      glUniformMatrix4fv(mvp_location, 1, GL_FALSE, glm::value_ptr(mvp_matrix));
       
       for (auto actors: scene.Actors()) {
         for (auto component: actors.Components()) {
@@ -86,6 +68,17 @@ namespace hodhr {
       window_.Swap();
     }
     
+    core::Scene * Renderer::GetCurrentScene() const {
+      return current_scene_;
+    }
+    
+    void Renderer::SetCurrentScene(core::Scene * scene) {
+      current_scene_ = scene;
+    }
+    
+    Shader * Renderer::GetPhysicalShader() const {
+      return physical_shader;
+    }
     
   }
 }

@@ -24,9 +24,10 @@ namespace hodhr {
       ~CameraComponent();
       
       void Init();
-      void Update(float dt);
+      virtual void Update(float dt);
       
-      glm::mat4 ModelViewMatrix() const;
+      glm::mat4 ViewMatrix() const;
+      glm::mat4 ProjectionMatrix() const;
       
     private:
       

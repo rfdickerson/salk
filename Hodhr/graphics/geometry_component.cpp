@@ -7,6 +7,10 @@
 //
 
 #include "geometry_component.hpp"
+#include "renderer.h"
+
+#include <glm/gtx/transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 namespace hodhr {
   namespace graphics {
@@ -71,16 +75,23 @@ namespace hodhr {
     }
     
     void GeometryComponent::Draw(graphics::Renderer * renderer) {
+      
+      // set the physical shader
+      const Shader* physical_shader = renderer->GetPhysicalShader();
+      physical_shader->Use();
+      GLuint mvp_location = physical_shader->UniformLocation("MVPMatrix");
+      auto view_matrix = renderer->GetCurrentScene()->GetCamera()->ViewMatrix();
+      auto projection_matrix = renderer->GetCurrentScene()->GetCamera()->ProjectionMatrix();
+      auto MVPMatrix = projection_matrix * view_matrix;
+      
+      glUniformMatrix4fv(mvp_location, 1, GL_FALSE, glm::value_ptr(MVPMatrix));
       glBindVertexArray(vertex_array);
-      
       glDrawArrays(GL_TRIANGLES, 0, 12*3);
-      
       glBindVertexArray(0);
     }
     
     GeometryComponent::~GeometryComponent() {
       glDeleteBuffers(1, &vertex_buffer);
-      
       glDeleteVertexArrays(1, &vertex_array);
     }
     

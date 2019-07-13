@@ -25,7 +25,7 @@ namespace hodhr {
     far_(100.0f),
     direction_(glm::vec3(0, 0, 1)),
     up_(glm::vec3(0, 1, 0)),
-    field_of_view_(90.0f),
+    field_of_view_(45.0f),
     aspect_ratio_(1.0),
     horizontal_angle_(0.0),
     vertical_angle_(0.0)
@@ -40,7 +40,7 @@ namespace hodhr {
     void CameraComponent::Init() {
       
       projection_matrix_ = glm::perspective(
-                                            field_of_view_,
+                                            glm::radians(field_of_view_),
                                             aspect_ratio_,
                                             near_,
                                             far_
@@ -76,8 +76,12 @@ namespace hodhr {
       
     }
     
-    glm::mat4 CameraComponent::ModelViewMatrix() const {
-      return projection_matrix_ * view_matrix_;
+    glm::mat4 CameraComponent::ViewMatrix() const {
+      return view_matrix_;
+    }
+    
+    glm::mat4 CameraComponent::ProjectionMatrix() const {
+      return projection_matrix_;
     }
     
   }

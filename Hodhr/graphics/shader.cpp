@@ -92,11 +92,11 @@ namespace hodhr {
       glDeleteShader(program_id_);
     }
     
-    GLuint Shader::UniformLocation(const std::string name) {
+    GLuint Shader::UniformLocation(const std::string name) const {
       return glGetUniformLocation(program_id_, name.c_str());
     }
     
-    void Shader::Use() {
+    void Shader::Use() const {
       glUseProgram(program_id_);
     }
     

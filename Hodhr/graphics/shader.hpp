@@ -22,11 +22,11 @@ namespace hodhr {
 
       static Shader* BuildShader(std::string vertex_shader, std::string fragment_shader);
       
-      GLuint UniformLocation(const std::string name);
+      GLuint UniformLocation(const std::string name) const;
       
       ~Shader();
       
-      void Use();
+      void Use() const;
       
     private:
       

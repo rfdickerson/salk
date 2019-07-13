@@ -27,8 +27,14 @@ namespace hodhr {
       void Init();
       void Draw(const core::Scene &scene);
       
+      Shader * GetPhysicalShader() const;
+      
+      void SetCurrentScene(core::Scene * scene);
+      core::Scene * GetCurrentScene() const;
+      
     private:
       Window window_;
+      core::Scene * current_scene_;
       
       Shader *physical_shader;
       

@@ -31,6 +31,7 @@ namespace hodhr {
       actors.push_back(cube_actor);
       
       Actor camera_actor;
+      camera_actor.SetPosition(glm::vec3(0, 0, -5));
       
       auto camera_component = new graphics::CameraComponent();
       camera_actor.Attach(camera_component);

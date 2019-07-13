@@ -36,6 +36,8 @@ namespace hodhr {
       
       scene_.Init();
       
+      renderer_.SetCurrentScene(&scene_);
+      
       Run();
       
     }

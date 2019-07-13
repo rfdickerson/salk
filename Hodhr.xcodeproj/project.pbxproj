@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E3AA185522942C280058C6F6 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E3AA185422942C280058C6F6 /* main.cpp */; };
 		E3AA185F22942C600058C6F6 /* window.cc in Sources */ = {isa = PBXBuildFile; fileRef = E3AA185D22942C600058C6F6 /* window.cc */; };
-		E3AA186222942F150058C6F6 /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E3AA186122942F150058C6F6 /* libSDL2-2.0.0.dylib */; };
 		E3AA186422942F290058C6F6 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3AA186322942F290058C6F6 /* OpenGL.framework */; };
 		E3AA18672295754D0058C6F6 /* renderer.cc in Sources */ = {isa = PBXBuildFile; fileRef = E3AA18652295754D0058C6F6 /* renderer.cc */; };
 		E3AA186A22957BDA0058C6F6 /* engine.cc in Sources */ = {isa = PBXBuildFile; fileRef = E3AA186822957BDA0058C6F6 /* engine.cc */; };
@@ -23,6 +22,7 @@
 		E3AA1880229C29250058C6F6 /* camera_component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E3AA187E229C29250058C6F6 /* camera_component.cpp */; };
 		E3AA188322A41F990058C6F6 /* event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E3AA188122A41F990058C6F6 /* event.cpp */; };
 		E3AA188622A420220058C6F6 /* mouse_event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E3AA188422A420220058C6F6 /* mouse_event.cpp */; };
+		E3AA188822D820290058C6F6 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3AA188722D820290058C6F6 /* SDL2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -67,6 +67,7 @@
 		E3AA188222A41F990058C6F6 /* event.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = event.hpp; sourceTree = "<group>"; };
 		E3AA188422A420220058C6F6 /* mouse_event.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mouse_event.cpp; sourceTree = "<group>"; };
 		E3AA188522A420220058C6F6 /* mouse_event.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = mouse_event.hpp; sourceTree = "<group>"; };
+		E3AA188722D820290058C6F6 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +76,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3AA186C22959D600058C6F6 /* libGLEW.2.1.0.dylib in Frameworks */,
+				E3AA188822D820290058C6F6 /* SDL2.framework in Frameworks */,
 				E3AA186422942F290058C6F6 /* OpenGL.framework in Frameworks */,
-				E3AA186222942F150058C6F6 /* libSDL2-2.0.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +153,7 @@
 		E3AA186022942F150058C6F6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E3AA188722D820290058C6F6 /* SDL2.framework */,
 				E3AA186B22959D600058C6F6 /* libGLEW.2.1.0.dylib */,
 				E3AA186322942F290058C6F6 /* OpenGL.framework */,
 				E3AA186122942F150058C6F6 /* libSDL2-2.0.0.dylib */,
@@ -349,6 +351,10 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 57U96AW229;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -364,6 +370,10 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 57U96AW229;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

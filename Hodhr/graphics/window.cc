@@ -15,8 +15,8 @@ namespace hodhr {
     
     Window::Window()
     : fullscreen_(false),
-    width_(512),
-    height_(512)
+    width_(1280),
+    height_(720)
     {
       
       
@@ -38,7 +38,19 @@ namespace hodhr {
                                           height_,
                                           flags);
       
+
       
+      SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
+      SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
+      
+      SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1);
+      SDL_GL_SetAttribute( SDL_GL_CONTEXT_MAJOR_VERSION, 3 );
+      SDL_GL_SetAttribute( SDL_GL_CONTEXT_MINOR_VERSION, 3 );
+      
+      SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK,
+                          SDL_GL_CONTEXT_PROFILE_CORE);
+      
+      SDL_GL_SetSwapInterval(1);
       
       sdl_main_context_ = SDL_GL_CreateContext(sdl_main_window_);
       if (sdl_main_context_ == NULL) {

@@ -26,6 +26,7 @@ public:
   Actor();
   ~Actor();
   
+  void SetPosition(glm::vec3 position);
   glm::vec3 Position() const;
   
   void Init();
