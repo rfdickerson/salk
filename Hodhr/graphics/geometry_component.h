@@ -13,7 +13,7 @@
 
 #include <GL/glew.h>
 
-#include "../core/component.hpp"
+#include "../core/component.h"
 
 namespace hodhr {
 namespace graphics {

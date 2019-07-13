@@ -15,8 +15,8 @@
 
 #include "glm/glm.hpp"
 
-#include "component.hpp"
-#include "event.hpp"
+#include "component.h"
+#include "event.h"
 
 namespace hodhr {
 namespace core {
@@ -34,6 +34,8 @@ public:
   void Attach(Component * component);
   
   std::vector<Component*> Components() const;
+  
+  glm::mat4 ModelMatrix() const;
   
 private:
   

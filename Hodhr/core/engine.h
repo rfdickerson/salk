@@ -9,10 +9,8 @@
 #ifndef engine_hpp
 #define engine_hpp
 
-#include <stdio.h>
-
 #include "../graphics/renderer.h"
-#include "scene.hpp"
+#include "scene.h"
 
 namespace hodhr {
 namespace core {

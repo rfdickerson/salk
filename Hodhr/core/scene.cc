@@ -6,10 +6,10 @@
 //  Copyright © 2019 Robert F. Dickerson. All rights reserved.
 //
 
-#include "scene.hpp"
+#include "scene.h"
 
-#include "../graphics/geometry_component.hpp"
-#include "../graphics/camera_component.hpp"
+#include "../graphics/geometry_component.h"
+#include "../graphics/camera_component.h"
 
 namespace hodhr {
   namespace core {
@@ -28,38 +28,38 @@ namespace hodhr {
       
       auto geometry_component = new graphics::GeometryComponent();
       cube_actor.Attach(geometry_component);
-      actors.push_back(cube_actor);
+      actors_.push_back(cube_actor);
       
       Actor camera_actor;
       camera_actor.SetPosition(glm::vec3(0, 0, -5));
       
       auto camera_component = new graphics::CameraComponent();
       camera_actor.Attach(camera_component);
-      actors.push_back(camera_actor);
+      actors_.push_back(camera_actor);
       
-      current_camera = camera_component;
+      current_camera_ = camera_component;
       
-      for (Actor actor: actors) {
+      for (Actor actor: actors_) {
         actor.Init();
       }
     }
     
     void Scene::Update(float dt) {
-      for (Actor actor: actors) {
+      for (Actor actor: actors_) {
         actor.Update(dt);
       }
     }
     
     std::vector<Actor> Scene::Actors() const {
-      return actors;
+      return actors_;
     }
     
     graphics::CameraComponent* Scene::GetCamera() const {
-      return current_camera;
+      return current_camera_;
     }
     
     void Scene::SetCamera(graphics::CameraComponent * camera) {
-      current_camera = camera;
+      current_camera_ = camera;
     }
     
   }

@@ -6,7 +6,7 @@
 //  Copyright © 2019 Robert F. Dickerson. All rights reserved.
 //
 
-#include "shader.hpp"
+#include "shader.h"
 
 #include <iostream>
 #include <fstream>

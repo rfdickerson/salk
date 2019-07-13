@@ -15,7 +15,7 @@
 		E3AA186C22959D600058C6F6 /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E3AA186B22959D600058C6F6 /* libGLEW.2.1.0.dylib */; };
 		E3AA186F229840DE0058C6F6 /* actor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E3AA186D229840DE0058C6F6 /* actor.cpp */; };
 		E3AA1872229841480058C6F6 /* component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E3AA1870229841480058C6F6 /* component.cpp */; };
-		E3AA18752298BF530058C6F6 /* geometry_component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E3AA18732298BF530058C6F6 /* geometry_component.cpp */; };
+		E3AA18752298BF530058C6F6 /* geometry_component.cc in Sources */ = {isa = PBXBuildFile; fileRef = E3AA18732298BF530058C6F6 /* geometry_component.cc */; };
 		E3AA18782298C08A0058C6F6 /* scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E3AA18762298C08A0058C6F6 /* scene.cpp */; };
 		E3AA187B229ADD720058C6F6 /* shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E3AA1879229ADD720058C6F6 /* shader.cpp */; };
 		E3AA187D229C25210058C6F6 /* shaders in CopyFiles */ = {isa = PBXBuildFile; fileRef = E3AA187C229B158D0058C6F6 /* shaders */; };
@@ -54,7 +54,7 @@
 		E3AA186E229840DE0058C6F6 /* actor.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = actor.hpp; sourceTree = "<group>"; };
 		E3AA1870229841480058C6F6 /* component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = component.cpp; sourceTree = "<group>"; };
 		E3AA1871229841480058C6F6 /* component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = component.hpp; sourceTree = "<group>"; };
-		E3AA18732298BF530058C6F6 /* geometry_component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = geometry_component.cpp; sourceTree = "<group>"; };
+		E3AA18732298BF530058C6F6 /* geometry_component.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = geometry_component.cc; sourceTree = "<group>"; };
 		E3AA18742298BF530058C6F6 /* geometry_component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = geometry_component.hpp; sourceTree = "<group>"; };
 		E3AA18762298C08A0058C6F6 /* scene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = scene.cpp; sourceTree = "<group>"; };
 		E3AA18772298C08A0058C6F6 /* scene.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = scene.hpp; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 				E3AA185E22942C600058C6F6 /* window.h */,
 				E3AA18652295754D0058C6F6 /* renderer.cc */,
 				E3AA18662295754D0058C6F6 /* renderer.h */,
-				E3AA18732298BF530058C6F6 /* geometry_component.cpp */,
+				E3AA18732298BF530058C6F6 /* geometry_component.cc */,
 				E3AA18742298BF530058C6F6 /* geometry_component.hpp */,
 				E3AA1879229ADD720058C6F6 /* shader.cpp */,
 				E3AA187A229ADD720058C6F6 /* shader.hpp */,
@@ -219,7 +219,7 @@
 			files = (
 				E3AA18782298C08A0058C6F6 /* scene.cpp in Sources */,
 				E3AA185522942C280058C6F6 /* main.cpp in Sources */,
-				E3AA18752298BF530058C6F6 /* geometry_component.cpp in Sources */,
+				E3AA18752298BF530058C6F6 /* geometry_component.cc in Sources */,
 				E3AA188322A41F990058C6F6 /* event.cpp in Sources */,
 				E3AA187B229ADD720058C6F6 /* shader.cpp in Sources */,
 				E3AA1880229C29250058C6F6 /* camera_component.cpp in Sources */,

@@ -6,15 +6,15 @@
 //  Copyright © 2019 Robert F. Dickerson. All rights reserved.
 //
 
-#include "camera_component.hpp"
-#include "../core/actor.hpp"
+#include "camera_component.h"
+#include "../core/actor.h"
 
 #include <glm/gtc/quaternion.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtx/transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-#define GLM_FORCE_RADIANS
+//#define GLM_FORCE_RADIANS
 
 namespace hodhr {
   namespace graphics {

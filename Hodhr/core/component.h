@@ -9,8 +9,6 @@
 #ifndef component_hpp
 #define component_hpp
 
-#include <stdio.h>
-
 //#include "../graphics/renderer.h"
 
 namespace hodhr {

@@ -6,14 +6,14 @@
 //  Copyright © 2019 Robert F. Dickerson. All rights reserved.
 //
 
-#include "geometry_component.hpp"
+#include "geometry_component.h"
 #include "renderer.h"
 
 #include <glm/gtx/transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
 namespace hodhr {
-  namespace graphics {
+namespace graphics {
     
     static const GLfloat g_vertex_buffer_data[] = {
       -1.0f,-1.0f,-1.0f, // triangle 1 : begin
@@ -77,12 +77,13 @@ namespace hodhr {
     void GeometryComponent::Draw(graphics::Renderer * renderer) {
       
       // set the physical shader
-      const Shader* physical_shader = renderer->GetPhysicalShader();
+      auto physical_shader = renderer->PhysicalShader();
       physical_shader->Use();
-      GLuint mvp_location = physical_shader->UniformLocation("MVPMatrix");
-      auto view_matrix = renderer->GetCurrentScene()->GetCamera()->ViewMatrix();
-      auto projection_matrix = renderer->GetCurrentScene()->GetCamera()->ProjectionMatrix();
-      auto MVPMatrix = projection_matrix * view_matrix;
+      auto mvp_location = physical_shader->UniformLocation("MVPMatrix");
+      auto model_matrix = parent_->ModelMatrix();
+      auto view_matrix = renderer->CurrentScene()->GetCamera()->ViewMatrix();
+      auto projection_matrix = renderer->CurrentScene()->GetCamera()->ProjectionMatrix();
+      auto MVPMatrix = projection_matrix * view_matrix * model_matrix;
       
       glUniformMatrix4fv(mvp_location, 1, GL_FALSE, glm::value_ptr(MVPMatrix));
       glBindVertexArray(vertex_array);

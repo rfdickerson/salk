@@ -12,8 +12,8 @@
 #include <stdio.h>
 #include <vector>
 
-#include "actor.hpp"
-#include "../graphics/camera_component.hpp"
+#include "actor.h"
+#include "../graphics/camera_component.h"
 
 namespace hodhr {
   namespace core {
@@ -33,9 +33,9 @@ namespace hodhr {
       
     private:
       
-      std::vector<Actor> actors;
+      std::vector<Actor> actors_;
       
-      graphics::CameraComponent * current_camera;
+      graphics::CameraComponent * current_camera_;
     };
     
   }

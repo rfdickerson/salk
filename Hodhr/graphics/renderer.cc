@@ -57,8 +57,6 @@ namespace hodhr {
       
       glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
       
-      
-      
       for (auto actors: scene.Actors()) {
         for (auto component: actors.Components()) {
           component->Draw(this);
@@ -68,7 +66,7 @@ namespace hodhr {
       window_.Swap();
     }
     
-    core::Scene * Renderer::GetCurrentScene() const {
+    core::Scene * Renderer::CurrentScene() const {
       return current_scene_;
     }
     
@@ -76,7 +74,7 @@ namespace hodhr {
       current_scene_ = scene;
     }
     
-    Shader * Renderer::GetPhysicalShader() const {
+    Shader * Renderer::PhysicalShader() const {
       return physical_shader;
     }
     

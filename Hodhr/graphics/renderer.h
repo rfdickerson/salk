@@ -12,9 +12,9 @@
 #include <stdio.h>
 
 #include "window.h"
-#include "shader.hpp"
+#include "shader.h"
 
-#include "../core/scene.hpp"
+#include "../core/scene.h"
 
 namespace hodhr {
   namespace graphics {
@@ -27,10 +27,10 @@ namespace hodhr {
       void Init();
       void Draw(const core::Scene &scene);
       
-      Shader * GetPhysicalShader() const;
+      Shader * PhysicalShader() const;
       
       void SetCurrentScene(core::Scene * scene);
-      core::Scene * GetCurrentScene() const;
+      core::Scene * CurrentScene() const;
       
     private:
       Window window_;
