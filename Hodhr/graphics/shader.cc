@@ -45,7 +45,7 @@ Shader* Shader::BuildShader(std::string vertex_shader, std::string fragment_shad
   glCompileShader(vsid);
   
   glGetShaderInfoLog(vsid, 256, NULL, logInfo);
-  std::cout << "Compiled Shader " << vertex_shader << logInfo << std::endl;
+  std::cout << "Compiled Vertex Shader: " << vertex_shader << logInfo << std::endl;
   
   shader_src = loadFile(fragment_shader);
   const char *cf_str = shader_src.c_str();
@@ -54,7 +54,7 @@ Shader* Shader::BuildShader(std::string vertex_shader, std::string fragment_shad
   glCompileShader(fsid);
   
   glGetShaderInfoLog(fsid, 256, NULL, logInfo);
-  std::cout << "Compiled Shader:" << fragment_shader << logInfo << std::endl;
+  std::cout << "Compiled Fragment Shader: " << fragment_shader << logInfo << std::endl;
   
   GLuint program_id = glCreateProgram();
   glAttachShader(program_id, vsid);
@@ -64,7 +64,7 @@ Shader* Shader::BuildShader(std::string vertex_shader, std::string fragment_shad
   
   glGetProgramInfoLog(program_id, 256, NULL, logInfo);
   
-  std::cout << "Compilation result: \n" << logInfo << std::endl;
+  std::cout << "Shader Link compilation: \n" << logInfo << std::endl;
   
   GLint success = GL_FALSE;
   glGetProgramiv(program_id, GL_LINK_STATUS, &success);
