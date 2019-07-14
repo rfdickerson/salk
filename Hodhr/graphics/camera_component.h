@@ -24,7 +24,10 @@ public:
   
 private:
   
+  // near plane
   GLfloat near_;
+
+  // far plane
   GLfloat far_;
 
   GLfloat field_of_view_;
@@ -33,12 +36,7 @@ private:
   glm::mat4 projection_matrix_;
   glm::mat4 view_matrix_;
 
-  glm::vec3 direction_;
-  glm::vec3 up_;
-  glm::vec3 right_;
 
-  GLfloat horizontal_angle_;
-  GLfloat vertical_angle_;
   
 };
 

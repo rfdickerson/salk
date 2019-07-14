@@ -15,12 +15,8 @@ CameraComponent::CameraComponent()
 :
 near_(0.1f),
 far_(100.0f),
-direction_(glm::vec3(0, 0, 1)),
-up_(glm::vec3(0, 1, 0)),
 field_of_view_(45.0f),
-aspect_ratio_(1.0),
-horizontal_angle_(0.0),
-vertical_angle_(0.0)
+aspect_ratio_(1.0)
 {
   
 }
@@ -44,27 +40,11 @@ void CameraComponent::Init() {
 
 void CameraComponent::Update(float dt) {
   
-  direction_ = glm::vec3(
-                          glm::cos(vertical_angle_) * glm::sin(horizontal_angle_),
-                          glm::sin(vertical_angle_),
-                          glm::cos(vertical_angle_) * glm::cos(horizontal_angle_)
-                          );
-  
-  right_ = glm::vec3(
-                      glm::sin(horizontal_angle_ - glm::pi<float>() / 2.0f),
-                      0,
-                      glm::cos(horizontal_angle_ - glm::pi<float>() / 2.0f)
-                      );
-  
-  up_ = glm::cross(right_, direction_);
-  
   view_matrix_ = glm::lookAt(
                               parent_->Position(),
-                              parent_->Position() + direction_,
-                              up_
+                              parent_->Position() + parent_->Direction(),
+                              parent_->Up()
                               );
-  
-  
   
 }
 
