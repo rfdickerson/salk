@@ -21,6 +21,13 @@ set(HEADERS
     core/component.h
     core/engine.h
     core/event.h
+    core/mouse_event.h
+    core/scene.h
+    graphics/camera_component.h
+    graphics/geometry_component.h
+    graphics/renderer.h
+    graphics/shader.h
+    graphics/window.h
 )
 
 add_executable(hodhr main.cpp ${SOURCES} ${HEADERS})

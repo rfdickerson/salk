@@ -8,7 +8,7 @@
 
 #include "actor.h"
 
-#include <glm/gtx/transform.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 
 namespace hodhr {
 namespace core {

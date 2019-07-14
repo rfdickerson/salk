@@ -21,7 +21,7 @@ namespace graphics {
 class GeometryComponent: public core::Component {
 public:
   
-  ~GeometryComponent();
+  virtual ~GeometryComponent();
   
   void Init();
   

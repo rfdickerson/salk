@@ -1,11 +1,3 @@
-//
-//  engine.hpp
-//  Hodhr
-//
-//  Created by Robert F. Dickerson on 5/22/19.
-//  Copyright © 2019 Robert F. Dickerson. All rights reserved.
-//
-
 #ifndef engine_hpp
 #define engine_hpp
 

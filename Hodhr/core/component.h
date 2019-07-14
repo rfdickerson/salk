@@ -1,11 +1,3 @@
-//
-//  component.hpp
-//  Hodhr
-//
-//  Created by Robert F. Dickerson on 5/24/19.
-//  Copyright © 2019 Robert F. Dickerson. All rights reserved.
-//
-
 #ifndef component_hpp
 #define component_hpp
 
@@ -19,6 +11,7 @@ namespace hodhr {
   
 namespace core {
 
+// forward define for Actor since cyclical
 class Actor;
   
 class Component {

@@ -6,9 +6,9 @@ namespace hodhr {
 namespace graphics {
     
 Window::Window()
-: fullscreen_(false),
-width_(1280),
-height_(720)
+: width_(1280),
+  height_(720),
+  fullscreen_(false)
 {
   
   
@@ -45,7 +45,7 @@ void Window::Init() {
   SDL_GL_SetSwapInterval(1);
   
   sdl_main_context_ = SDL_GL_CreateContext(sdl_main_window_);
-  if (sdl_main_context_ == NULL) {
+  if (sdl_main_context_ == nullptr) {
     std::cout << "OpenGL context could not be created!" << std::endl;
     exit(1);
   }
