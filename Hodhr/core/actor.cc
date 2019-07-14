@@ -68,7 +68,7 @@ std::vector<Component*> Actor::Components() const {
 }
 
 glm::mat4 Actor::ModelMatrix() const {
-  return glm::translate(glm::mat4(), position_);
+  return glm::translate(glm::mat4(1.0), position_);
 }
 
 void Actor::SetHorizontalAngle(float angle) {

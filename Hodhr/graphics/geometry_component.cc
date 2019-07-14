@@ -55,22 +55,14 @@ namespace graphics {
     };
     
     void GeometryComponent::Init() {
-      glGenBuffers(1, &vertex_array);
+      glGenVertexArrays(1, &vertex_array);
       glBindVertexArray(vertex_array);
       
       glGenBuffers(1, &vertex_buffer);
       glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer);
       glBufferData(GL_ARRAY_BUFFER, sizeof(g_vertex_buffer_data), g_vertex_buffer_data, GL_STATIC_DRAW);
-      
-      glEnableVertexAttribArray(0);
-      glVertexAttribPointer(
-                            0,
-                            3,
-                            GL_FLOAT,
-                            GL_FALSE,
-                            0,
-                            (void*)0
-                            );
+
+
       
     }
     
@@ -86,9 +78,22 @@ namespace graphics {
       auto MVPMatrix = projection_matrix * view_matrix * model_matrix;
       
       glUniformMatrix4fv(mvp_location, 1, GL_FALSE, glm::value_ptr(MVPMatrix));
+
       glBindVertexArray(vertex_array);
+      glEnableVertexAttribArray(0);
+      glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer);
+      glVertexAttribPointer(
+                            0,
+                            3,
+                            GL_FLOAT,
+                            GL_FALSE,
+                            0,
+                            (void*)0
+                            );
+
       glDrawArrays(GL_TRIANGLES, 0, 12*3);
-      glBindVertexArray(0);
+      glDisableVertexAttribArray(0);
+
     }
     
     GeometryComponent::~GeometryComponent() {

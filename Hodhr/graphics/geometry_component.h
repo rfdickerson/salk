@@ -32,6 +32,8 @@ private:
   
   GLuint vertex_array;
   GLuint vertex_buffer;
+
+  GLuint mvp_location_;
   
 };
     
